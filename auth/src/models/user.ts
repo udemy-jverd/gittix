@@ -21,12 +21,22 @@ interface userDoc extends mongoose.Document {
 
 const userSchema = new mongoose.Schema({
     email: {
-        type: String, // Specific to mongoose and not to Typescript
+        type: String, // specific to mongoose and not to Typescript
         required: true
     },
     password: {
         type: String,
         required: true
+    }
+}, {
+    toJSON: {
+        // sanitize the userSchema to be usable by the client
+        transform(doc, ret) {
+            ret.id = ret._id;
+            delete ret._id;
+            delete ret.password;
+            delete ret.__v;
+        }
     }
 });
 
