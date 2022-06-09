@@ -14,3 +14,9 @@ kubectl create secret generic jwt-secret --from-literal=JWT_KEY=<value>
 ```sh
 skafflod dev
 ```
+
+### Update the project commons library to the latest version
+
+```sh
+npm update @udemy-jverd/gittix-common
+```
