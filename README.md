@@ -1,4 +1,4 @@
-# ticketing
+# GitTix
 
 ## Run
 
